@@ -19,6 +19,7 @@ const CardsList = (props) =>{
                         return(
                             <li key={index}>
                                 <img key={index} src={card.image} alt={`${card.value}`} />
+                                <p>{card.value === '0' ? '10' : card.value} of {card.suit}</p>
                             </li>
                         )
                      })}
@@ -54,7 +55,7 @@ const DeckOfCards = () => {
     */
 
     const selectCardImage = (value, suit) => {
-        const imageUrl = `https://www.deckofcardsapi.com/static/img/${value[0]}${suit[0]}.png`;
+        const imageUrl = `https://www.deckofcardsapi.com/static/img/${value}${suit}.png`;
         console.log(`Selected card: ${value} of ${suit}`);
     return imageUrl;
 }
